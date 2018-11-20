@@ -4,7 +4,7 @@
   <html lang="en">
     <head>
       <meta charset="UTF-8">
-      <title>Document</title>
+      <title>Kattsidan</title>
     </head>       
     <body>
        <h1> This is my test page <h1>          
