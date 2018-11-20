@@ -146,7 +146,43 @@ form{
     <div class="vadtyckerdutext">Vad tycker DU?</div>
   </div>
   
+<head>
+  <script>
+    function getVote(int) {
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else { // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("poll").innerHTML = this.responseText;
+        }
+      }
+      xmlhttp.open("GET", "poll_vote.php?vote=" + int, true);
+      xmlhttp.send();
+    }
+  </script>
+</head>
 
+<body>
+
+  <div id="poll">
+    <h3>Ärtsoppa eller Gulash på städdagen?</h3>
+    <form>
+      Ärtsoppa med punsh:
+      <input type="radio" name="vote" value="0" onclick="getVote(this.value)">
+      <br>Gulash med styrketår:
+      <input type="radio" name="vote" value="1" onclick="getVote(this.value)">
+    </form>
+  </div>
+
+</body>
+
+</html>
+<h3>5 måsten varje medlem måste göra</h3>
+  <p>1 HÄLSA PÅ DEM MAN MÖTER 2 VAR SNÄLL MOT BARN 3 VAR SNÄLL MOT KATTER 3 KOM PÅ STÄDDAGAR 4 HÅLL RENT I SOPRUMMET 5 HJÄLP TILL ATT HÅLLA TJUVAR BORTA</P>
   <html>
 </body>
 </html>
